@@ -5,9 +5,9 @@ import webbrowser
 
 from ..models.Webpage import Webpage
 
-open_controller = APIRouter()
+open_router = APIRouter()
 
-@open_controller.post("/web")
+@open_router.post("/web")
 async def open_webpage(webpage: Webpage):
 
     if len(webpage.url) > 0:

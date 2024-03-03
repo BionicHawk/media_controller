@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 
 # Controllers
-from src.controllers.set_controller import set_controller
-from src.controllers.open_controller import open_controller
-from src.controllers.typing_controller import typing_controller
+from routers.set_router import set_router
+from routers.open_router import open_router
+from routers.typing_router import typing_router
 
 import uvicorn
 import pyautogui
@@ -12,9 +12,9 @@ import socket
 pyautogui.FAILSAFE = False
 app = FastAPI()
 
-app.include_router(router=set_controller, prefix='/set')
-app.include_router(router=open_controller, prefix='/open')
-app.include_router(router=typing_controller)
+app.include_router(router=set_router, prefix='/set')
+app.include_router(router=open_router, prefix='/open')
+app.include_router(router=typing_router)
 
 @app.get('/')
 async def welcome():

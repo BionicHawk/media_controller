@@ -5,10 +5,10 @@ from ..macros.controls import AudioVideo, Navigation, Volume
 from ..models.Control import Control
 from ..models.Position import Position
 
-set_controller = APIRouter()
+set_router = APIRouter()
 
 # controles de volumen
-@set_controller.post('/volume')
+@set_router.post('/volume')
 async def change_volume(control: Control):
 
     match control.command:
@@ -28,7 +28,7 @@ async def change_volume(control: Control):
     raise HTTPException(400, detail='Unknown command')
 
 # controles de video
-@set_controller.post('/video')
+@set_router.post('/video')
 async def video_controls(videoControl: Control):
 
     match videoControl.command:
@@ -71,7 +71,7 @@ async def video_controls(videoControl: Control):
         
     raise HTTPException(400, detail="Unknown command")
 
-@set_controller.post('/set/mouse')
+@set_router.post('/set/mouse')
 async def move_mouse(pos: Position):
     pg.displayMousePosition(pos.z, pos.y)
     return 'ok!'

@@ -3,9 +3,9 @@ import pyautogui
 
 from ..models.Typed import Typed
 
-typing_controller = APIRouter()
+typing_router = APIRouter()
 
-@typing_controller.post('/typing')
+@typing_router.post('/typing')
 async def typying_on(typed: Typed):
     pyautogui.typewrite(message=typed.query)
     print(f"[{typed.fromUser}] typed")
