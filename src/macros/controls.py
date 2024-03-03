@@ -55,3 +55,6 @@ class Navigation():
     @staticmethod
     def previousItem():
         pg.hotkey("shift", "tab")
+
+
+        
