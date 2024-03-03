@@ -9,7 +9,6 @@ import uvicorn
 import pyautogui
 import socket
 
-pyautogui.FAILSAFE = False
 app = FastAPI()
 
 app.include_router(router=set_router, prefix='/set')
