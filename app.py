@@ -1,11 +1,15 @@
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
 
 # Models
 from src.models.Control import Control
 from src.models.Webpage import Webpage
 from src.models.Position import Position
 from src.models.Typed import Typed
+
+# Macros
+from src.macros.controls import Volume
+from src.macros.controls import AudioVideo
+from src.macros.controls import Navigation
 
 import uvicorn
 import webbrowser
@@ -23,7 +27,9 @@ async def welcome():
 # controlador para abrir links en el navegador
 @app.post('/open/web')
 async def open_webpage(webpage: Webpage):
+
     if len(webpage.url) > 0:
+
         pyautogui.press('f11')
         print(f'[{webpage.fromUser}] is opening: {webpage.url}')
         pyautogui.hotkey('ctrl', 'w')
@@ -31,66 +37,71 @@ async def open_webpage(webpage: Webpage):
         time.sleep(4)
         pyautogui.press('f11')
         return 'ok!'
+    
     raise HTTPException(400, detail='Some field or fields are empty')
 
 # cambiar volumen
 @app.post('/set/volume')
 async def change_volume(control: Control):
+
     match control.command:
+
         case "up":
-            pyautogui.press('volumeup')
-            print(f"[{control.fromUser}] is setting the volume up")
+            Volume.setVolumeUp()
             return 'ok!'
+        
         case "down":
-            pyautogui.press('volumedown')
-            print(f"[{control.fromUser}] is setting the volume down")
+            Volume.setVolumeDown()
             return 'ok!'
+        
         case "mute":
-            pyautogui.press('volumemute')
-            print(f"[{control.fromUser}] is mutting the audio")
+            Volume.setVolume2Mute()
             return 'ok!'
+        
     raise HTTPException(400, detail='Unknown command')
 
 # controles de video
 @app.post('/set/video')
 async def video_controls(videoControl: Control):
+
     match videoControl.command:
+
         case "playpause":
-            pyautogui.press('playpause')
-            print(f"[{videoControl.fromUser}] is pausing or playing the media")
+            AudioVideo.togglePause()
             return 'ok!'
+        
         case "advance":
-            pyautogui.press('right')
-            print(f"[{videoControl.fromUser}] is advancing...")
+            AudioVideo.forward()
             return 'ok!'
+        
         case "goback":
-            pyautogui.press('left')
-            print(f"[{videoControl.fromUser}] is going back...")
+            AudioVideo.rewind()
             return 'ok!'
+        
         case "next":
-            pyautogui.press('nexttrack')
-            print(f"[{videoControl.fromUser}] is skipping the next track")
+            AudioVideo.nextTrack()
             return 'ok!'
+        
         case "prev":
-            pyautogui.press('prevtrack')
-            print(f"[{videoControl.fromUser}] is skipping the previous track")
+            AudioVideo.previousTrack()
             return 'ok!'
+        
         case "enter":
-            pyautogui.press('enter')
-            print(f"[{videoControl.fromUser}] is doing enter")
+            Navigation.Enter()
             return 'ok!'
+        
         case "lb":
-            pyautogui.hotkey('shift', 'tab')
-            print(f"[{videoControl.fromUser}] is using alt+tab")
+            Navigation.previousItem()
             return 'ok!'
+        
         case "rb":
-            pyautogui.hotkey('tab')
-            print(f"[{videoControl.fromUser}] is using tab")
+            Navigation.nextItem()
             return 'ok!'
+        
         case "fullscreen":
-            pyautogui.press('f')
-            print(f"[{videoControl.fromUser}] changed the view")
+            AudioVideo.toggleVideo2Fullscreen()
             return 'ok!'
+        
     raise HTTPException(400, detail="Unknown command")
 
 @app.post('/typing')
