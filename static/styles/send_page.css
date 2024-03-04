@@ -1,0 +1,79 @@
+main {
+    display: flex;
+    justify-content: center;
+}
+
+#url_input {
+    width: 48vw;
+    padding: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 16px;
+    border-style: solid;
+    border-color: #0084ff;
+    border-width: 2px;
+}
+
+#submit_btn {
+    background-color: #0084ff;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+    padding: 8px;
+    border-radius: 16px;
+}
+
+#sender_form {
+    margin: 0;
+}
+
+#sender_form h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 8px;
+}
+
+.form_container {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 16px;
+    margin-top: 12vh;
+}
+
+/* for mobile devices */
+@media only screen and (orientation: portrait) {
+
+    #url_input {
+        width: 80vw;
+        padding: 1vw;
+        font-size: 32pt;
+        border-radius: 32px;
+        border-width: 0.5vw;
+        margin-bottom: 1vh;
+    }
+
+    #sender_form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #submit_btn {
+        padding: 2vw;
+        font-size: 32pt;
+        border-radius: 32px;
+    }
+
+    #sender_form h1 {
+        text-align: center;
+        margin: 1vh;
+        font-size: 36pt;
+    }
+
+    .form_container {
+        padding: 2vh;
+        border-radius: 64px;
+        margin-top: 12vh;
+    }
+
+}

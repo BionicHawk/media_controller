@@ -1,0 +1,82 @@
+.Menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12vh;
+    align-items: center;
+    background-color: white;
+    padding: 2vh;
+    border-radius: 20px;
+}
+
+.OptionButton {
+    width: 24vw;
+    padding: 1vh 1vw;
+    background-color: #0084ff;
+    font-size: 12pt;
+    color: white;
+    border: none;
+    margin-bottom: 1vh;
+    border-radius: 12px;
+    transition: all 200ms;
+}
+
+.OptionButton:hover {
+    cursor: pointer;
+    background-color: #2c99ff;
+}
+
+.ArtIcon {
+    width: 10vw;
+}
+
+.ArtIconContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1vw;
+    width: 10vw;
+    height: 10vw;
+    background-color: #202020;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 0.5vw;
+    border-color: #2c99ff;
+    margin: 4vh;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+/* for mobile devices */
+@media only screen and (orientation: portrait) {
+
+    .Menu {
+        margin-top: 12vh;
+        padding: 4vw;
+        border-radius: 64px;
+    }
+
+    .ArtIcon {
+        width: 50vw;
+    }
+
+    .ArtIconContainer {
+        padding: 3vw;
+        width: 50vw;
+        height: 50vw;
+        border-width: 2vw;
+        margin: 4vh;
+    }
+
+    .OptionButton {
+        width: 72vw;
+        padding: 1vh 1vw;
+        font-size: 32pt;
+        margin-bottom: 1vh;
+        border-radius: 32px;
+    }
+    
+
+}

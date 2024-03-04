@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Request
 import pyautogui as pg
 import time
 import webbrowser
@@ -9,7 +9,7 @@ open_router = APIRouter()
 
 @open_router.post("/web")
 async def open_webpage(webpage: Webpage):
-
+    print(webpage)
     if len(webpage.url) > 0:
 
         pg.press('f11')

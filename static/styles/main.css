@@ -1,0 +1,65 @@
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.HeaderIcon {
+    width: 48px; 
+}
+
+.HeaderIconContainer {
+    height: 48px;
+    width: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 3px;
+    padding: 4px;
+    border-style: solid;
+    border-color: #0084ff;
+    border-radius: 50%;
+    background-color: #202020;
+}
+
+.HeaderTitle {
+    margin: auto auto;
+    font-size: larger;
+    font-weight: bold;
+}
+
+header {
+    background-color: gainsboro;
+    display: flex;
+    padding: 8px;
+}
+
+body {
+    margin: 0px;
+}
+
+html {
+    background-color: #a7a7a7;
+}
+
+/* for mobile devices */
+@media only screen and (orientation: portrait) {
+    .HeaderIcon {
+        width: 12vw; 
+    }
+
+    .HeaderIconContainer {
+        height: 12vw;
+        width: 12vw;
+        padding: 0.5vh;
+        border-width: 0.3vh;
+    }
+
+    .HeaderTitle {
+        font-size: 36pt;
+    }
+
+    header {
+        background-color: gainsboro;
+        display: flex;
+        padding: 1vw;
+    }
+}
