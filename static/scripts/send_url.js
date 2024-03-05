@@ -1,6 +1,12 @@
 const sender_form = document.getElementById("sender_form");
+const title = document.getElementById("title");
+const iconLogo = document.getElementById("iconLogo");
 const url_input = document.getElementById("url_input");
 const route = "/open/web";
+
+function goToRoot() {
+    open("/", "_self");
+}
 
 sender_form.addEventListener('submit', async (ev) => {
     ev.preventDefault();
@@ -20,3 +26,6 @@ sender_form.addEventListener('submit', async (ev) => {
             .then(() => alert('Hecho!'));
     }
 })
+
+title.addEventListener("click", goToRoot);
+iconLogo.addEventListener("click", goToRoot);

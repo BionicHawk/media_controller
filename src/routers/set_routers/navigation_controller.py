@@ -11,10 +11,10 @@ async def press_enter():
 
 @navigation_router.post('/lb')
 async def press_left_button():
-    Navigation.nextItem()
+    Navigation.previousItem()
     return 'ok!'
 
-@navigation_router.post('/fullscreen')
-async def press_left_button():
-    Navigation.previousItem()
+@navigation_router.post('/rb')
+async def press_right_button():
+    Navigation.nextItem()
     return 'ok!'

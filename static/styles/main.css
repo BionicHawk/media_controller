@@ -3,12 +3,12 @@ p {
 }
 
 .HeaderIcon {
-    width: 48px; 
+    width: 32px; 
 }
 
 .HeaderIconContainer {
-    height: 48px;
-    width: 48px;
+    height: 32px;
+    width: 32px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,10 +20,18 @@ p {
     background-color: #202020;
 }
 
+.HeaderIconContainer:hover {
+    cursor: pointer;
+}
+
 .HeaderTitle {
     margin: auto auto;
     font-size: larger;
     font-weight: bold;
+}
+
+.HeaderTitle:hover {
+    cursor: pointer;
 }
 
 header {

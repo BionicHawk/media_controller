@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <meta  charset="utf-8"/>
+        <title>Controles de Audio/Vídeo</title>
+        <link rel="stylesheet" href="/static/styles/main.css">
+        <link rel="stylesheet" href="/static/styles/av_controls.css">
+    </head>
+    <body>
+        <header>
+            <div class="HeaderIconContainer" id="iconLogo">
+                <img src="/static/images/wirelessicon.png" class="HeaderIcon"/>
+            </div>
+            <p class="HeaderTitle" id="title">CoreMediaLite</p>
+        </header>
+        <main>
+            <div class="ControlsDrawer">
+                <form id="SendTextForm">
+                    <input type="text" id="TextInput" placeholder="Ej. www.youtube.com">
+                    <input type="submit" id="SendTextBtn" value="Envíar Texto">
+                </form>
+                <div class="MediaControls">
+                    <div class="VerticalControls" id="FullscreenBtn">
+                        <button class="FAB">
+                            <img src="/static/images/fullscreen.svg">
+                        </button>
+                        <button class="FAB" id="NextTrackBtn">
+                            <img src="/static/images/next-track.svg">
+                        </button>
+                        <button class="FAB" id="PrevTrackBtn">
+                            <img src="/static/images/prev-track.svg">
+                        </button>
+                    </div>
+                    <div class="MiddleControls">
+                        <button id="EnterBtn">Enter</button>
+                    </div>
+                    <div class="VerticalControls">
+                        <button class="FAB" id="VolumeMute">
+                            <img src="/static/images/volmute.svg">
+                        </button>
+                        <button class="FAB" id="VolumeUp">
+                            <img src="/static/images/volup.svg">
+                        </button>
+                        <button class="FAB" id="VolumeDown">
+                            <img src="/static/images/voldown.svg">
+                        </button>
+                    </div>
+                </div>
+                <div class="MainControls">
+                    <button class="MainBtn" id="RewindBtn">
+                        <img src="/static/images/rewind.svg">
+                    </button>
+                    <button class="MainBtn" id="PlayPauseBtn">
+                        <img src="/static/images/playpause.svg">
+                    </button>
+                    <button class="MainBtn" id="ForwardBtn">
+                        <img src="/static/images/fast-forward.svg">
+                    </button>
+                </div>
+                <div class="MainControls">
+                    <button class="MainBtn" id="PrevItemBtn">
+                        LB
+                    </button>
+                    <button class="MainBtn" id="NextItemBtn">
+                        RB
+                    </button>
+                </div>
+            </div>
+        </main>
+    </body>
+    <script src="/static/scripts/audio_video.js"></script>
+</html>

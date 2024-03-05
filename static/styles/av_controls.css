@@ -1,0 +1,170 @@
+.ControlsDrawer {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    background-color: white;
+    margin: 50px auto;
+    padding: 16px;
+    border-radius: 32px;
+}
+
+.ControlsDrawer form {
+    display: flex;
+    flex-direction: column;
+}
+
+.MediaControls {
+    display: flex;
+    flex-direction: row;
+}
+
+.VerticalControls {
+    display: flex;
+    flex-direction: column;
+}
+
+.MiddleControls {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.MainControls {
+    display: flex;
+    justify-content: center;
+}
+
+#TextInput {
+    border-color: #0084ff;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 16px;
+    padding: 8px;
+    margin-bottom: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#SendTextBtn {
+    background-color: #0084ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    border: none;
+    border-radius: 16px;
+    transition: all 200ms;
+}
+
+#SendTextBtn:hover {
+    cursor: pointer;
+    background-color: #48a5fc;
+}
+
+.MainBtn {
+    background-color: #0084ff;
+    height: 32px;
+    width: 48px;
+    margin: 4px;
+    border: none;
+    border-radius: 16px;
+    padding: 4px;
+    transition: all 200ms;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+.MainBtn:hover {
+    cursor: pointer;
+    background-color: #48a5fc;
+}
+
+.MainBtn img {
+    height: 100%;
+}
+
+.FAB {
+    width: 48px;
+    height: 48px;
+    border: none;
+    background-color: #0084ff;
+    transition: all 200ms;
+    border-radius: 50%;
+    margin: 4px;
+}
+
+.FAB img {
+    width: 70%;
+}
+
+.FAB:hover {
+    cursor: pointer;
+    background-color: #48a5fc;
+}
+
+#EnterBtn {
+    background-color: #0084ff;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    padding: 12px;
+    margin: 4px;
+    width: 80px;
+    transition: all 200ms;
+}
+
+#EnterBtn:hover {
+    background-color: #48a5fc;
+    cursor: pointer;
+}
+
+@media screen and (orientation: portrait) {
+    .ControlsDrawer {
+        margin: 10vh auto;
+        border-radius: 64px;
+    }
+
+    .ControlsDrawer form {
+        margin: 2vw;
+    }
+
+    .FAB {
+        width: 12vw;
+        height: 12vw;
+        margin: 2vw;
+    }
+
+    #TextInput {
+        border-width: 0.5vw;
+        font-size: 32pt;
+        border-radius: 64px;
+        padding: 1vw;
+        margin-bottom: 1vh;
+    }
+    
+    #SendTextBtn {
+        padding: 1vw;
+        font-size: 32pt;
+        border-radius: 64px;
+    }
+
+    #EnterBtn {
+        border-radius: 64px;
+        font-size: 48pt;
+        padding: 2vw;
+        margin: 2vw;
+        width: 25vw;
+    }
+
+    .MainBtn {
+        height: 7vw;
+        width: 14vw;
+        margin: 1vw;
+        border-radius: 64px;
+        padding: 1vw;
+        font-size: 32pt;
+    }
+    
+}
