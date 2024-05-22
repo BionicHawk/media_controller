@@ -2,6 +2,7 @@ from fastapi import FastAPI, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 import os
+import sys
 
 # Controllers
 from src.routers.set_router import set_router
@@ -28,12 +29,11 @@ async def welcome():
     """
 
 if __name__ == '__main__':
-    res = input("Would you like me to guess the hostname? (Y/N): ").lower()
     ip = '127.0.0.1'
-    if res == 'y':
-        hostname = socket.gethostname()
-        ip = socket.gethostbyname(hostname)
-    else:
-        ip = input("Give me the ip: ")
+    port = 3001
+    args = sys.argv
+    if len(args) > 2:
+        ip = args[1]
+        port = int(args[2])
 
-    uvicorn.run(app, host=ip, port=3001)
+    uvicorn.run(app, host=ip, port=port)

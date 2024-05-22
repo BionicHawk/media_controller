@@ -56,5 +56,14 @@ class Navigation():
     def previousItem():
         pg.hotkey("shift", "tab")
 
+class Slideshow():
+
+    @staticmethod
+    def nextSlide():
+        pg.press("pageup")
+
+    def prevSlide():
+        pg.press("pagedown")
+
 
         

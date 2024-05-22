@@ -9,12 +9,14 @@ from ..models.Position import Position
 from .set_routers.audio_controller import audio_controller
 from .set_routers.video_controller import video_controller
 from .set_routers.navigation_controller import navigation_router
+from .set_routers.slideshow_controller import slideshow_controller
 
 set_router = APIRouter()
 
 set_router.include_router(router=audio_controller, prefix='/volume')
 set_router.include_router(router=video_controller, prefix='/video')
 set_router.include_router(router=navigation_router, prefix='/navigation')
+set_router.include_router(router=slideshow_controller, prefix='/slides')
 
 # controles de volumen
 # @set_router.post('/volume')
