@@ -18,3 +18,7 @@ async def forward():
 @slideshow_controller.post('/rewind')
 async def rewind():
     AudioVideo.rewind()
+    
+@slideshow_controller.post('/switchmode')
+async def switchMode():
+    Slideshow.slideshowMode()

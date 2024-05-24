@@ -27,7 +27,7 @@ class AudioVideo:
 
     @staticmethod
     def rewind():
-        pg.press("right")
+        pg.press("left")
 
     @staticmethod
     def nextTrack():
@@ -60,10 +60,15 @@ class Slideshow():
 
     @staticmethod
     def nextSlide():
+        pg.press("pagedown")
+
+    @staticmethod
+    def prevSlide():
         pg.press("pageup")
 
-    def prevSlide():
-        pg.press("pagedown")
+    @staticmethod
+    def slideshowMode():
+        pg.press("f5")
 
 
         
